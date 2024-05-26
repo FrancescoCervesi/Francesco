@@ -1,0 +1,36 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale1.0">
+    <title>Nomi, Cose, Città</title>
+</head>
+<body>
+    <h1>Nomi, Cose, Città</h1>
+    <form method="post">
+        <input type="hidden" name="lettera" value="{{ lettera }}">
+        <h2>Lettera: {{ lettera }}</h2>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <br>
+        <label for="cosa">Cosa:</label>
+        <input type="text" id="cosa" name="cosa" required>
+        <br>
+        <label for="città">Città</label>
+        <input type="text" id="città" name="città" required>
+        <br>
+        <button type="submit">Invia Risposte</button>
+        </form>
+
+        {% if punteggio is not none %}
+        <div id="risultati">
+            <h3>Risultati:</h3>
+            <p>Nome: {{ nome }}</p>
+            <p>Cosa: {{ cosa }}</p>
+            <p>Città: {{ città }}</p>
+            <p>Punteggio: {{ punteggio }}</p>
+        </div>
+        {% endif %}
+    </body>
+    </html>
